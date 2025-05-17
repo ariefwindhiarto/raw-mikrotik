@@ -24,6 +24,7 @@ jobs:
         run: |
           python scripts/resolve-ml.py
           python scripts/resolve-wa.py
+          python scripts/resolve-store.py
 
       - name: Commit & Push jika ada perubahan
         run: |
