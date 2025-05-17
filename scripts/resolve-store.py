@@ -33,6 +33,13 @@ for domain in store_domains:
     resolved = mock_resolved_ips.get(domain, [])
     all_ips.update(resolved)
 
+import os
+from datetime import datetime
+
+# Buat folder raw jika belum ada
+os.makedirs("../raw", exist_ok=True)
+
 with open("../raw/ip-store.rsc", "w") as f:
     f.write(f"# Updated on {datetime.now().isoformat()}\n")
     f.write(generate_rsc(sorted(all_ips)))
+
