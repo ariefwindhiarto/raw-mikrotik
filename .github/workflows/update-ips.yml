@@ -2,8 +2,11 @@ name: Auto Update ML IPs
 
 on:
   schedule:
-    - cron: '0 3 * * *'  # setiap hari pukul 03:00 UTC (10:00 WIB)
+    - cron: '0 3 * * *'  # setiap hari jam 03:00 UTC (10:00 WIB)
   workflow_dispatch:
+
+permissions:
+  contents: write
 
 jobs:
   update:
@@ -17,12 +20,8 @@ jobs:
         with:
           python-version: '3.x'
 
-      - name: Install dependencies
-        run: pip install --upgrade pip
-
       - name: Jalankan Script Resolver
-        run: |
-          python scripts/resolve-ml.py
+        run: python scripts/resolve-ml.py
 
       - name: Commit & Push jika ada perubahan
         run: |
@@ -31,4 +30,3 @@ jobs:
           git add raw/*.rsc raw/*.txt
           git commit -m "Auto update ML IPs" || echo "No changes"
           git push
-
