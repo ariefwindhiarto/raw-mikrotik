@@ -31,7 +31,7 @@ rsc_path = os.path.join(raw_dir, "ip-mobilelegends.rsc")
 with open(rsc_path, "w") as rsc:
     rsc.write(f"# Updated on {datetime.now()}\n")
     for ip in sorted(ips):
-        rsc.write(f"/ip firewall address-list add list=mobilelegends address={ip} comment=auto-ml\n")
+        rsc.write(f"/ip firewall address-list add list=IP-MLBB address={ip} comment=auto-ml\n")
 
 # Tulis file .txt (opsional)
 txt_path = os.path.join(raw_dir, "ip-mobilelegends.txt")
