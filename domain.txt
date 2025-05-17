@@ -1,0 +1,4 @@
+ml-api.mobilelegends.com
+log-ml.mobilelegends.com
+cdn.mobilelegends.com
+sgp.mobilelegends.com
