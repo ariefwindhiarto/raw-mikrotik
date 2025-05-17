@@ -21,9 +21,9 @@ jobs:
           python-version: '3.x'
 
       - name: Jalankan Script Resolver
-        run: 
-        python scripts/resolve-ml.py
-        python scripts/resolve-wa.py
+        run: |
+          python scripts/resolve-ml.py
+          python scripts/resolve-wa.py
 
       - name: Commit & Push jika ada perubahan
         run: |
