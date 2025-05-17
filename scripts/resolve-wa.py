@@ -24,7 +24,7 @@ os.makedirs(raw_dir, exist_ok=True)
 with open(os.path.join(raw_dir, "ip-whatsapp.rsc"), "w") as rsc:
     rsc.write("# Updated on {}\n".format(datetime.now()))
     for ip in sorted(ips):
-        rsc.write(f"/ip firewall address-list add list=whatsapp address={ip} comment=auto-wa\n")
+        rsc.write(f"/ip firewall address-list add list=IP-Whatsapp address={ip} comment=auto-wa\n")
 
 with open(os.path.join(raw_dir, "ip-whatsapp.txt"), "w") as txt:
     for ip in sorted(ips):
