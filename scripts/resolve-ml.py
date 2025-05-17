@@ -8,7 +8,6 @@ rsc_path = os.path.join(base_dir, "../raw/ip-mobilelegends.rsc")
 txt_path = os.path.join(base_dir, "../raw/ip-mobilelegends.txt")
 
 with open("../domains.txt") as f:
-
     domains = [line.strip() for line in f if line.strip()]
 
 ips = set()
