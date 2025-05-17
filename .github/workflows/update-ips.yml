@@ -1,4 +1,4 @@
-name: Auto Update ML IPs
+name: Auto Update RAW IPs
 
 on:
   schedule:
