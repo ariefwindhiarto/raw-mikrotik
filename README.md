@@ -1,7 +1,3 @@
-<p align="center">
-  <img src="https://raw.githubusercontent.com/ariefwindhiarto/Mirror-CDN/main/logo-cdn-kerajaan.png" alt="Logo Mirror-CDN" width="200"/>
-</p>
-
 <h1 align="center">raw-mikrotk 👑</h1>
 <p align="center"><i>Auto-Update IP Address List Mobile Legends, WhatsApp, dan E-Commerce untuk MikroTik</i></p>
 
