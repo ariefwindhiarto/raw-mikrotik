@@ -1,0 +1,5 @@
+web.whatsapp.com
+api.whatsapp.com
+static.whatsapp.net
+mmg.whatsapp.net
+crashlogs.whatsapp.net
