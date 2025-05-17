@@ -1,4 +1,4 @@
-<h1 align="center">raw-mikrotk 👑</h1>
+<h1 align="center">RAW-Mikrotik 👑</h1>
 <p align="center"><i>Auto-Update IP Address List Mobile Legends, WhatsApp, dan E-Commerce untuk MikroTik</i></p>
 
 <p align="center">
