@@ -1,1 +1,1 @@
-![Auto Update](https://github.com/ariefwindhiarto/raw-mikrotk/actions/workflows/update-ips.yml/badge.svg)
+![Auto Update](https://github.com/ariefwindhiarto/raw-mikrotik/actions/workflows/update-ips.yml/badge.svg)
