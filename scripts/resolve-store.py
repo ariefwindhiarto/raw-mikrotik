@@ -1,45 +1,31 @@
-# resolve-store.py
-# Script untuk menyusun IP list dari domain aplikasi e-commerce dan dompet digital
-# Output dalam format RSC MikroTik
-# Dibuat otomatis, update: 2025-05-17
-
-from datetime import datetime
-
-store_domains = [
-    "shopee.co.id", "shopee.com", "shopeemobile.com", "shopee.io", "shopee.sg",
-    "tokopedia.com", "tokopedia.net", "tokopediax.com",
-    "lazada.co.id", "lazada.com", "grab.com", "gojek.com",
-    "dana.id", "ovo.id"
-]
-
-mock_resolved_ips = {
-    "shopee.co.id": ["103.82.249.44", "103.82.248.88"],
-    "tokopedia.com": ["203.190.242.66"],
-    "lazada.co.id": ["47.74.194.65"],
-    "grab.com": ["52.221.184.204"],
-    "gojek.com": ["103.127.132.67"],
-    "dana.id": ["103.255.215.5"],
-    "ovo.id": ["13.229.38.120"]
-}
-
-def generate_rsc(ip_list):
-    result = ""
-    for ip in ip_list:
-        result += f"/ip firewall address-list add address={ip} list=store-apps\n"
-    return result
-
-all_ips = set()
-for domain in store_domains:
-    resolved = mock_resolved_ips.get(domain, [])
-    all_ips.update(resolved)
-
+import socket
 import os
 from datetime import datetime
 
-# Buat folder raw jika belum ada
-os.makedirs("../raw", exist_ok=True)
+root_dir = os.path.dirname(os.path.dirname(__file__))
+domain_path = os.path.join(root_dir, "domains-store.txt")
 
-with open("../raw/ip-store.rsc", "w") as f:
-    f.write(f"# Updated on {datetime.now().isoformat()}\n")
-    f.write(generate_rsc(sorted(all_ips)))
+with open(domain_path) as f:
+    domains = [line.strip() for line in f if line.strip()]
 
+ips = set()
+
+for domain in domains:
+    try:
+        results = socket.gethostbyname_ex(domain)[2]
+        for ip in results:
+            ips.add(ip)
+    except:
+        continue
+
+raw_dir = os.path.join(root_dir, "raw")
+os.makedirs(raw_dir, exist_ok=True)
+
+with open(os.path.join(raw_dir, "ip-store.rsc"), "w") as rsc:
+    rsc.write("# Updated on {}\n".format(datetime.now()))
+    for ip in sorted(ips):
+        rsc.write(f"/ip firewall address-list add list=IP-Store address={ip} comment=auto-store\n")
+
+with open(os.path.join(raw_dir, "ip-store.txt"), "w") as txt:
+    for ip in sorted(ips):
+        txt.write(f"{ip}\n")
