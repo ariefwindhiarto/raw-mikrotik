@@ -1,7 +1,10 @@
 import socket
 from datetime import datetime
 
-with open("domains.txt") as f:
+import os
+base_dir = os.path.dirname(__file__)
+with open(os.path.join(base_dir, "../domains.txt")) as f:
+
     domains = [line.strip() for line in f if line.strip()]
 
 ips = set()
