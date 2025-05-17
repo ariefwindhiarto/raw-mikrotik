@@ -2,8 +2,8 @@ import socket
 import os
 from datetime import datetime
 
-# Lokasi file domains.txt (pastikan sesuai struktur repo)
-domain_path = os.path.abspath(os.path.join(os.path.dirname(__file__), "../domains.txt"))
+# Lokasi file domains-ml.txt (pastikan sesuai struktur repo)
+domain_path = os.path.abspath(os.path.join(os.path.dirname(__file__), "../domains-ml.txt"))
 raw_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), "../raw"))
 
 # Baca daftar domain
