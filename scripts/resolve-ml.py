@@ -1,13 +1,12 @@
 import socket
-from datetime import datetime
 import os
+from datetime import datetime
 
-base_dir = os.path.dirname(__file__)
-domain_path = os.path.join(base_dir, "../domains.txt")
-rsc_path = os.path.join(base_dir, "../raw/ip-mobilelegends.rsc")
-txt_path = os.path.join(base_dir, "../raw/ip-mobilelegends.txt")
+# Path absolut dari file domains.txt
+root_dir = os.path.dirname(os.path.dirname(__file__))
+domain_path = os.path.join(root_dir, "domains.txt")
 
-with open("../domains.txt") as f:
+with open(domain_path) as f:
     domains = [line.strip() for line in f if line.strip()]
 
 ips = set()
@@ -20,11 +19,14 @@ for domain in domains:
     except:
         continue
 
-with open(rsc_path, "w") as rsc:
+raw_dir = os.path.join(root_dir, "raw")
+os.makedirs(raw_dir, exist_ok=True)
+
+with open(os.path.join(raw_dir, "ip-mobilelegends.rsc"), "w") as rsc:
     rsc.write("# Updated on {}\n".format(datetime.now()))
     for ip in sorted(ips):
         rsc.write(f"/ip firewall address-list add list=mobilelegends address={ip} comment=auto-ml\n")
 
-with open(txt_path, "w") as txt:
+with open(os.path.join(raw_dir, "ip-mobilelegends.txt"), "w") as txt:
     for ip in sorted(ips):
         txt.write(f"{ip}\n")
