@@ -1,4 +1,4 @@
-# Updated on 2025-05-20 03:36:01.277242
+# Updated on 2025-05-21 03:35:29.469297
 /ip firewall address-list add list=IP-Store address=104.18.28.244 comment=auto-store
 /ip firewall address-list add list=IP-Store address=104.18.29.244 comment=auto-store
 /ip firewall address-list add list=IP-Store address=147.136.140.126 comment=auto-store
