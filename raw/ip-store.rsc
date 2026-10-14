@@ -1,12 +1,12 @@
-# Updated on 2026-10-13 09:47:57.392080
-/ip firewall address-list add list=IP-Store address=13.32.164.107 comment=auto-store
-/ip firewall address-list add list=IP-Store address=13.32.164.5 comment=auto-store
-/ip firewall address-list add list=IP-Store address=13.32.164.66 comment=auto-store
-/ip firewall address-list add list=IP-Store address=13.32.164.82 comment=auto-store
-/ip firewall address-list add list=IP-Store address=147.136.168.96 comment=auto-store
+# Updated on 2026-10-14 08:04:21.341999
+/ip firewall address-list add list=IP-Store address=134.65.77.140 comment=auto-store
 /ip firewall address-list add list=IP-Store address=147.139.163.15 comment=auto-store
 /ip firewall address-list add list=IP-Store address=15.232.102.236 comment=auto-store
 /ip firewall address-list add list=IP-Store address=15.232.72.249 comment=auto-store
+/ip firewall address-list add list=IP-Store address=3.170.115.39 comment=auto-store
+/ip firewall address-list add list=IP-Store address=3.170.115.62 comment=auto-store
+/ip firewall address-list add list=IP-Store address=3.170.115.86 comment=auto-store
+/ip firewall address-list add list=IP-Store address=3.170.115.95 comment=auto-store
 /ip firewall address-list add list=IP-Store address=43.152.108.21 comment=auto-store
 /ip firewall address-list add list=IP-Store address=43.218.208.58 comment=auto-store
 /ip firewall address-list add list=IP-Store address=47.246.165.115 comment=auto-store
