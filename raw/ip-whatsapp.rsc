@@ -1,3 +1,3 @@
-# Updated on 2026-10-16 07:34:27.903397
-/ip firewall address-list add list=IP-Whatsapp address=57.144.173.32 comment=auto-wa
-/ip firewall address-list add list=IP-Whatsapp address=57.144.221.32 comment=auto-wa
+# Updated on 2026-10-17 07:14:00.883730
+/ip firewall address-list add list=IP-Whatsapp address=57.144.205.32 comment=auto-wa
+/ip firewall address-list add list=IP-Whatsapp address=57.144.79.32 comment=auto-wa
